@@ -11,7 +11,7 @@ import * as reviewActions from './../../actions/review.actions';
   templateUrl: './reviews-container.component.html',
   styleUrls: ['./reviews-container.component.css']
 })
-export class ReviewsContainerComponent implements OnInit,OnChanges {
+export class ReviewsContainerComponent implements OnInit, OnChanges {
 
   @Input() bookId: string;
 
@@ -27,15 +27,33 @@ export class ReviewsContainerComponent implements OnInit,OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-     if(changes.bookId.currentValue !== changes.bookId.previousValue){
-       // load reviews when book id change
-       this.loadReviews();
-     }
+    if (changes.bookId.currentValue !== changes.bookId.previousValue) {
+      // load reviews when book id value has changed
+      this.loadReviews();
+    }
   }
 
   loadReviews() {
     this.store.dispatch(new reviewActions.LoadReviews(this.bookId));
 
+  }
+
+  removeReview(review) {
+    this.store.dispatch(new reviewActions.RemoveReview(review.$key));
+  }
+
+  voteReview(review, val) {
+    this.store.dispatch(new reviewActions.ReviewVote({ review, val }));
+  }
+
+  addReview(content) {
+    let now = new Date();
+    let review = {
+      text: content,
+      votes: 0,
+      date: now.toString()
+    }
+    this.store.dispatch(new reviewActions.AddReview(review));
   }
 
 

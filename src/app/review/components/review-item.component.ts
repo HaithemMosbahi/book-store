@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   <md-grid-tile>
   <ngx-avatar src="https://pbs.twimg.com/profile_images/861878255229554689/bCE4HLNS_bigger.jpg" ></ngx-avatar>  
   </md-grid-tile>
-  <md-grid-tile>{{text}}</md-grid-tile>
+  <md-grid-tile>{{text}} - {{votes}}</md-grid-tile>
   <md-grid-tile>  <a (click)="upVote.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_up</i></a>
   <a (click)="downVote.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_down</i></a>
   <a (click)="removeReview.emit()"> <i style="cursor: pointer;" class="material-icons">close</i></a>       </md-grid-tile>
