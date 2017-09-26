@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './core/containers/app.component';
 
+import {AvatarModule} from 'ngx-avatar'
 import { environment } from '../environments/environment';
 
 import {
@@ -55,6 +56,7 @@ import { reducers, metaReducers } from "./core/reducers";
     // Firebase modules
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AvatarModule
   ],
   providers: [
     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }

@@ -87,30 +87,23 @@
         </md-list-item>
 
         <md-list-item>
-            <button md-raised-button color="primary">ADD TO CART</button>
-            
-          </md-list-item>
+          <button md-raised-button color="primary">ADD TO CART</button>
+
+        </md-list-item>
 
       </md-list>
 
-      
+
 
     </md-grid-tile>
   </md-grid-list>
+
+  <br/>
+  <br/>
+
+  <app-reviews-container [bookId]="book._id.$oid"></app-reviews-container>
+
 </div>
 
-<br/><br/>
 
-<md-list>
-    <md-list-item *ngFor="let message of messages">
-      <img mdListAvatar src="https://pbs.twimg.com/profile_images/861878255229554689/bCE4HLNS_bigger.jpg" alt="">
-      <h3 mdLine> {{message.from}} </h3>
-      <p mdLine>
-        <span> {{message.subject}} </span>
-        <span class="demo-2"> -- {{message.content}} </span>
-      </p>
-    </md-list-item>
-  </md-list>
 
-  <br/><br/>
-  <app-reviews-container></app-reviews-container>

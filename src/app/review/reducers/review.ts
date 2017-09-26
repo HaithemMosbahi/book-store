@@ -19,7 +19,7 @@ export function reducer(state:State = initialState,action:reviewActions.All){
            return {...state,bookId: action.payload,loading:true};
         
         case reviewActions.LOAD_REVIEWS_SUCCESS:
-            return {...state,reviews: action.payload.slice(),loading:true};
+            return {...state,reviews: action.payload.slice(),loading:false};
          
         default:
             return state;

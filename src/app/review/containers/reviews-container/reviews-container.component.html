@@ -1,3 +1,16 @@
-<p>
-  reviews-container works!
-</p>
+<div>
+  <h2>Reviews</h2>
+
+  <md-progress-spinner *ngIf="loading$ | async" color="primary" mode="indeterminate" value="50">
+  </md-progress-spinner>
+
+  <div class="reviews-container" *ngIf="reviews$ | async as reviews">
+      <app-review-item *ngFor="let review of reviews" [text]="review.text" [votes]="review.votes">
+      </app-review-item>
+</div>
+
+  <app-add-review></app-add-review>
+
+
+
+</div>
