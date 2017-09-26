@@ -37,3 +37,7 @@ md-grid-list{
     margin-right: 10%;
     text-align: center;
 }
+
+td,th {
+    vertical-align: middle !important;
+}

@@ -5,3 +5,7 @@
 app-add-review {
     margin-top: 20px;
 }
+
+md-progress-spinner{
+    margin:0 auto;
+}

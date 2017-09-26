@@ -23,8 +23,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   <a (click)="downVote.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_down</i></a>
   <a (click)="removeReview.emit()"> <i style="cursor: pointer;" class="material-icons">close</i></a>
   </md-card-actions>
-
-
 </md-card>
   
     `,

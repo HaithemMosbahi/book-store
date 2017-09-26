@@ -33,6 +33,9 @@ import * as catalogActions from "./../actions/catalog.actions";
                 justify-content: center;
               
         }
+        md-progress-spinner{
+            margin:0 auto;
+        }
         `
     ]
 })
