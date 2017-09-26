@@ -11,7 +11,8 @@ import {
     MdProgressSpinnerModule,
     MdGridListModule,
     MdListModule,
-    MdInputModule
+    MdInputModule,
+    MdCheckboxModule
 } from '@angular/material';
 
 @NgModule({
@@ -25,7 +26,8 @@ import {
     MdProgressSpinnerModule,
     MdGridListModule,
     MdListModule,
-    MdInputModule
+    MdInputModule,
+    MdCheckboxModule
     
   ],
   exports: [
@@ -38,7 +40,8 @@ import {
     MdProgressSpinnerModule,
     MdGridListModule,
     MdListModule,
-    MdInputModule
+    MdInputModule,
+    MdCheckboxModule
   ]
 })
 export class MaterialModule {}

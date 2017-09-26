@@ -1,3 +1,4 @@
+import { CoreEffects } from './core/effects/core.effects';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { HttpModule } from '@angular/http';
@@ -49,7 +50,7 @@ import { reducers, metaReducers } from "./core/reducers";
    */
     StoreRouterConnectingModule,
 
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([CoreEffects]),
 
     !environment.production ? StoreDevtoolsModule.instrument() : [],
 

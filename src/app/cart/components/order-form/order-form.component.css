@@ -1,9 +1,9 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+.order-form{
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+md-list-item, button{
+  margin-top: 15px;
+}

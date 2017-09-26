@@ -1,62 +1,4 @@
-<!-- <pre>{{cartService.rows | json}}</pre>
- -->
-<!-- <div *ngIf="cartRows$ | async as cartRows">
-  <ng-template #empty>
-    <app-cart-empty></app-cart-empty>
-  </ng-template>
-  <div *ngIf="cartRows.length > 0; else empty">
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Titre</th>
-          <th>Auteur</th>
-          <th>Prix </th>
-          <th>Quantité</th>
-          <th>Montant</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr class="cart-row" *ngFor="let row of cartRows">
-          <td class="cart-image">
-            <img [src]="row.book.image">
-          </td>
-          <td class="cart-title"> <a routerLink="/catalog/book/{{row.book._id.$oid}}">{{row.book.title}} </a> </td>
-          <td class="cart-author">{{row.book.author}}</td>
-          <td class="cart-price right">{{row.book.price | currency:'TND'}}</td>
-          <td class="cart-quantity"> <input type="number" [(ngModel)]="row.quantity"> </td>
-          <td>{{row.quantity * row.book.price | currency:'TND' }}</td>
-          <td class="cart-remove"><button (click)="removeFromCart(row)"><img src="assets/img/cart-remove.png" ></button></td>
-        </tr>
-      </tbody> -->
-      <!--  <tfoot>
-  <tr>
-    <td colspan="4">Total</td>
-    <td class="right">{{totalHt() |currency:currency:true}}</td>
-    <td class="right">{{totalTtc() |currency:currency:true}}</td>
-    <td></td>
-  </tr>
-  </tfoot> -->
-    <!--   <tfoot>
-        <td colspan="4"></td>
-        <td>Total : </td>
-        <td class=" cart-total right"> -->
-          <!-- {{cartService.total() | currency:'TND' }} -->
-       <!--  </td>
-      </tfoot>
-    </table>
-    <a routerLink="/cart/order"> Checkout </a>
-  </div>
-</div> -->
-
-
-
-<i *ngIf="loading$ | async" class="fa fa-spin fa-refresh"></i>
-
-
-<div *ngIf="cartRows$ | async as cartRows">
+<div  *ngIf="cartRows$ | async as cartRows">
   <ng-template #empty>
     <app-cart-empty></app-cart-empty>
   </ng-template>
@@ -67,17 +9,14 @@
     <div>({{cartRows.length}} item)</div>
 
 
-    <app-cart-row *ngFor="let row of cartRows" 
-                  [row]="row" (remove)="removeFromCart(row)"
-                  (clicked)="goToDetail(row.book._id.$oid)" ></app-cart-row>
+    <app-cart-row *ngFor="let row of cartRows" [row]="row" (remove)="removeFromCart(row)" (clicked)="goToDetail(row.book._id.$oid)"></app-cart-row>
 
-            <div class="footer">
-                <div style="display:inline-block"> Total : 3000 $</div>
-                
-                <button md-raised-button routerLink="/cart/order" color="primary">Checkout</button>
-            </div>
+    <div class="footer">
+      <div style="display:inline-block"> Total : 3000 $</div>
 
-                  
+      <button md-raised-button routerLink="/cart/order" color="primary">Checkout</button>
+    </div>
+
   </div>
 
 </div>

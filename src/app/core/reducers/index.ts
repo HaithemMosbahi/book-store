@@ -18,7 +18,7 @@ import * as fromRouter from '@ngrx/router-store';
  * notation packages up all of the exports into a single object.
  */
 
-//import * as fromLayout from '../core/reducers/layout';
+import * as fromCore from './core';
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
@@ -34,7 +34,6 @@ export interface State {
  * and the current or initial state and return a new immutable state.
  */
 export const reducers: ActionReducerMap<State> = {
-  //layout: fromLayout.reducer,
   routerReducer: fromRouter.routerReducer,
 };
 
@@ -57,12 +56,17 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
   ? [logger]
   : [];
 
-  /**
-   * Layout Reducers
-   */
-  //export const getLayoutState = createFeatureSelector<fromLayout.State>('layout');
+/**
+ * Core Reducers
+ */
+export const getCoreState = createFeatureSelector<fromCore.State>('core');
 
-/*   export const getShowSidenav = createSelector(
-    //getLayoutState,
-    //fromLayout.getShowSidenav
-  ); */
+export const getCartCount = createSelector(
+  getCoreState,
+  fromCore.getCount
+);
+
+export const getCartTotal = createSelector(
+  getCoreState,
+  fromCore.getTotal
+);

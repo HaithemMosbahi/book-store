@@ -17,5 +17,10 @@ app-cart-content-page {
 
 .footer > button {
     display:inline-block;
-    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.cart-content{
+    margin-left: 10%;
+    margin-right: 10%;
 }

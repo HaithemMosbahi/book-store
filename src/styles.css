@@ -2,7 +2,7 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-
+/* 
 .right {
     text-align: right;
     padding-right: 3em;
@@ -68,7 +68,7 @@
   .error {
     color:darkred;
   }
-
+ */
   body{
     text-align: center;
   }

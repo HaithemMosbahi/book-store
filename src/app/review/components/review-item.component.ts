@@ -13,7 +13,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   <a (click)="removeReview.emit()"> <i style="cursor: pointer;" class="material-icons">close</i></a>       </md-grid-tile>
 </md-grid-list>
   
-  
     `,
   styles: [`
       :host{

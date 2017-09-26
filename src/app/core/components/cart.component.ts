@@ -1,10 +1,10 @@
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-cart',
     template: `
-    <a routerLink="/cart/content">
+    <a routerLink="/cart/content"> {{count}}
     <i class="material-icons md-48 cart">shopping_cart</i>   
     </a> 
   `,
@@ -23,6 +23,8 @@ import { Component } from '@angular/core';
     ]
 })
 export class CartComponent {
+
+    @Input() count: number = 0;
 
 
 }

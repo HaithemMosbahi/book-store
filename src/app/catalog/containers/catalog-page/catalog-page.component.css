@@ -1,0 +1,14 @@
+.catalog-container {
+    margin-left : 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.catalog-list {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      
+}
+

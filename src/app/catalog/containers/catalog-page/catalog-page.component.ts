@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import * as fromCollection from './../../reducers';
 import { Store } from '@ngrx/store';
 import { CatalogService } from './../../services/books.service';
@@ -16,7 +17,8 @@ export class CatalogPageComponent implements OnInit {
   books$: Observable<Book[]>;
   loading$: Observable<boolean>;
 
-  constructor(private store: Store<fromCollection.State>) {
+  constructor(private store: Store<fromCollection.State>,
+              private router:Router) {
     this.books$ = this.store.select(fromCollection.getCatalogContent);
     this.loading$ = this.store.select(fromCollection.getCatalogLoading);
 
@@ -34,6 +36,11 @@ export class CatalogPageComponent implements OnInit {
 
   addBookToCart(book: Book) {
     this.store.dispatch(new catalogActions.AddToCart(book));
+  }
+
+  goToDetails(book:Book){
+    this.router.navigate(['/catalog/book/',book._id.$oid]);
+
   }
 
 }

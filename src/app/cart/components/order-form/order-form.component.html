@@ -1,4 +1,4 @@
- <form [class.submitted]="isSubmitted()" (ngSubmit)="onSubmit()" [formGroup]="form">
+<!--  <form [class.submitted]="isSubmitted()" (ngSubmit)="onSubmit()" [formGroup]="form">
    <fieldset formGroupName="identity">
      <legend>Identité</legend>
      <app-field label="Prénom">
@@ -71,7 +71,7 @@
      <button [disabled]="isDisabled()" type="submit">Confirmer</button>
    </p>
  </form>
-
+ -->
 
 
 
@@ -94,3 +94,183 @@
           <button [disabled]="isDisabled()" type="submit">Confirmer</button>
         </p>
     </form> -->
+
+<form [class.submitted]="isSubmitted()" (ngSubmit)="onSubmit()" [formGroup]="form" class="order-form">
+
+  <md-list formGroupName="identity">
+    <h3 mdSubheader>Account Information</h3>
+    <md-list-item>
+
+      <md-form-field class="example-full-width">
+        <input mdInput formControlName="firstName" placeholder="First name">
+      </md-form-field>
+    </md-list-item>
+    <md-list-item>
+
+      <md-form-field class="example-full-width">
+        <input mdInput formControlName="lastName" placeholder="Last Name">
+      </md-form-field>
+    </md-list-item>
+
+    <md-list-item>
+
+      <md-form-field class="example-full-width">
+        <input mdInput #email formControlName="email" placeholder="Email">
+       
+      </md-form-field>
+
+    </md-list-item>
+    </md-list>
+    <md-list formGroupName="shipping">
+    <h3 mdSubheader>Shipping Address</h3>
+    <md-list-item >
+      <p>
+
+        <md-form-field class="example-full-width">
+          <textarea mdInput formControlName="street" placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+        </md-form-field>
+        <md-form-field class="example-full-width">
+          <textarea mdInput placeholder="Address 2"></textarea>
+        </md-form-field>
+      </p>
+
+    </md-list-item>
+    <md-list-item >
+   
+            <md-form-field>
+              <input mdInput formControlName="city" placeholder="City">
+            </md-form-field>
+            <md-form-field >
+              <input mdInput formControlName="country" placeholder="Country">
+            </md-form-field>
+            <md-form-field >
+              <input mdInput formControlName="zipCode" #postalCode maxlength="4" placeholder="Postal Code">
+              <md-hint align="end">{{postalCode.value.length}} / 4</md-hint>
+            </md-form-field>
+
+           
+         
+    </md-list-item>
+    </md-list>
+   <md-list>
+      <h3 mdSubheader>Billing Address</h3>
+      
+     <md-list-item> 
+    <md-checkbox (change)="updateBilling()" formControlName="sameAddress">Use the same Address</md-checkbox>
+  </md-list-item>
+</md-list>
+
+
+<md-list  *ngIf="!form.value.sameAddress" formGroupName="billing">
+    <h3 mdSubheader>Shipping Address</h3>
+    <md-list-item >
+      <p>
+
+        <md-form-field class="example-full-width">
+          <textarea mdInput formControlName="street" placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+        </md-form-field>
+        <md-form-field class="example-full-width">
+          <textarea mdInput placeholder="Address 2"></textarea>
+        </md-form-field>
+      </p>
+
+    </md-list-item>
+    <md-list-item >
+   
+            <md-form-field>
+              <input mdInput formControlName="city" placeholder="City">
+            </md-form-field>
+            <md-form-field >
+              <input mdInput formControlName="country" placeholder="Country">
+            </md-form-field>
+            <md-form-field >
+              <input mdInput formControlName="city" #postalCode maxlength="5" placeholder="Postal Code">
+              <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+            </md-form-field>
+
+           
+         
+    </md-list-item>
+    </md-list>
+
+    <!-- <ng-template *ngIf="!form.value.sameAddress" formGroupName="billing">
+    <md-list-item >
+        <p>
+  
+          <md-form-field class="example-full-width">
+            <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+          </md-form-field>
+          <md-form-field class="example-full-width">
+            <textarea mdInput placeholder="Address 2"></textarea>
+          </md-form-field>
+        </p>
+  
+      </md-list-item>
+      <md-list-item >
+     
+              <md-form-field>
+                <input mdInput placeholder="City">
+              </md-form-field>
+              <md-form-field >
+                <input mdInput placeholder="State">
+              </md-form-field>
+              <md-form-field >
+                <input mdInput #postalCode maxlength="5" placeholder="Postal Code">
+                <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+              </md-form-field>
+           
+      </md-list-item>
+      </ng-template> -->
+
+  <button [disabled]="isDisabled()" type="submit" md-raised-button routerLink="/cart/order" color="primary">Place Order</button>
+  
+  <!-- 
+  <h3><b>Account Information</b></h3>
+  <table cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="example-full-width">
+          <input mdInput placeholder="First name">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="example-full-width">
+          <input mdInput placeholder="Last Name">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+
+  <md-form-field class="example-full-width">
+    <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+  </md-form-field>
+  <md-form-field class="example-full-width">
+    <textarea mdInput placeholder="Address 2"></textarea>
+  </md-form-field>
+
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="example-full-width">
+          <input mdInput placeholder="City">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="example-full-width">
+          <input mdInput placeholder="State">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="example-full-width">
+          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+          <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <h3><b>Account Information</b></h3> -->
+
+</form>

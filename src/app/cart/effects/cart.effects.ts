@@ -35,7 +35,7 @@ export class CartEffetcs {
 
     @Effect({ dispatch: false })
     checkout = this.actions$.ofType(cartActions.CART_CHECKOUT)
-        .delay(3000)
+        .delay(2000)
         .map((action: cartActions.CartCheckout) => action.payload)
         .mergeMap(() => of(this.cartService.clear()))
         .do(() => this.router.navigate(['/cart/complete']));

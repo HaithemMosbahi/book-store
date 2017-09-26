@@ -10,3 +10,8 @@
 .block {
     display: inline-block;
 }
+
+app-reviews-container{
+    margin-left: 15%;
+    margin-right: 15%;
+}
