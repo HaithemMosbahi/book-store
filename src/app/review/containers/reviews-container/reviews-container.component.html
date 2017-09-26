@@ -1,18 +1,10 @@
-<div>
-  <h2>Reviews</h2>
+<md-progress-spinner *ngIf="loading$ | async" color="primary" mode="indeterminate" value="50">
+</md-progress-spinner>
 
-  <md-progress-spinner *ngIf="loading$ | async" color="primary" mode="indeterminate" value="50">
-  </md-progress-spinner>
-
-  <div class="reviews-container" *ngIf="reviews$ | async as reviews">
-    <app-review-item *ngFor="let review of reviews" [text]="review.text" [votes]="review.votes" (removeReview)="removeReview(review)"
-       [user]="review.$key"  
-       (upVote)="voteReview(review,1)" (downVote)="voteReview(review,-1)">
-    </app-review-item>
-  </div>
-
-  <app-add-review (reviewAdded)="addReview($event)"></app-add-review>
-
-
-
+<div class="reviews-container" *ngIf="reviews$ | async as reviews">
+  <app-review-item *ngFor="let review of reviews" [text]="review.text" [votes]="review.votes" (removeReview)="removeReview(review)"
+    [user]="review.$key" (upVote)="voteReview(review,1)" (downVote)="voteReview(review,-1)">
+  </app-review-item>
 </div>
+
+<app-add-review (reviewAdded)="addReview($event)"></app-add-review>

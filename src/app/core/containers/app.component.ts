@@ -13,6 +13,7 @@ import * as actions from './../actions/core.actions';
         <app-menu>
         </app-menu>
         <router-outlet></router-outlet>
+        <!--<app-footer></app-footer> -->
     `
 })
 export class AppComponent implements OnInit {

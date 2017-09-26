@@ -4,7 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     selector: 'app-add-review',
     template: `
     <textarea mdInput placeholder="Add review..." [(ngModel)]="reviewContent" ></textarea>
-      <button md-raised-button color="primary" [disabled]="!reviewContent" (click)="addReviewClicked()"> Add Review </button>
+    <button md-raised-button color="primary" [disabled]="!reviewContent" (click)="addReviewClicked()"> Add Review </button>
     `,
     styles: [`
       :host{
@@ -12,11 +12,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       }
       textarea,button{
           display: block;
-          text-align: center;
       }
       textarea {
-        width: 500px;
+        width: 100%;
         height: 70px;
+      }
+      button{
+          float:right;
+          right: 20px;
+          margin-top:5px;
       }
 
       

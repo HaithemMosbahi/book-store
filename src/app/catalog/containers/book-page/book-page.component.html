@@ -63,47 +63,41 @@
 
 </div> -->
 
-<div *ngIf="selectedBook$ | async as book">
+<div class="selected-book" *ngIf="selectedBook$ | async as book">
   <app-book-navigator [current]="(current$ | async) + 1" [count]="count$ | async" (onNext)="nextBook($event)" (onPrevious)="previousBook($event)"></app-book-navigator>
 
-  <md-grid-list *ngIf="book" cols="2">
+  <!--   <md-grid-list *ngIf="book" cols="2">
+ -->
+  <table *ngIf="book">
+    <td width="50%">
+      <img height="70%" [src]="book.image">
 
-    <md-grid-tile>
+    </td>
+    <td width="50%">
+      <h1>{{book.title}}</h1>
+      <p> By {{book.title}} </p>
+      <div class="price">{{book.price | currency:'EUR'}}</div>
+      <p> {{book.pages}} pages</p>
+      <div [innerHtml]="book.description"></div>
+      <button (click)="addBookToCart(book)" md-raised-button color="primary">ADD TO CART</button>
+    </td>
+  </table>
+
+  <!--  <md-grid-tile>
       <img width="60%" height="70%" [src]="book.image">
     </md-grid-tile>
     <md-grid-tile>
-      <md-list>
-        <md-list-item>
-          <h1>{{book.title}}</h1>
-        </md-list-item>
-        <md-list-item>
-          <div class="price">{{book.price | currency:'TND'}}</div>
-        </md-list-item>
-        <md-list-item>
-          <div> {{book.pages}}</div>
-        </md-list-item>
-        <md-list-item>
-          <div [innerHtml]="book.description"></div>
-        </md-list-item>
-
-        <md-list-item>
-          <button md-raised-button color="primary">ADD TO CART</button>
-
-        </md-list-item>
-
-      </md-list>
-
-
+      <h1>{{book.title}}</h1>
+      <p> By {{book.title}} </p>
+      <div class="price">{{book.price | currency:'TND'}}</div>
+      <p> {{book.pages}} pages</p>
+      <div [innerHtml]="book.description"></div>
+      <button md-raised-button color="primary">ADD TO CART</button>
 
     </md-grid-tile>
   </md-grid-list>
-
-  <br/>
-  <br/>
-
+ -->
+  <p class="review-title">Reviews</p>
   <app-reviews-container [bookId]="book._id.$oid"></app-reviews-container>
 
 </div>
-
-
-

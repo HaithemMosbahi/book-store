@@ -1,4 +1,7 @@
 .reviews-container {
     text-align: center;
-    width: 500px;
+}
+
+app-add-review {
+    margin-top: 20px;
 }

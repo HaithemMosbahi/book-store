@@ -1,3 +1,4 @@
+import { FooterComponent } from './components/footer.component';
 import { SharedModule } from './../shared/shared.module';
 import { FirebaseService } from './services/firebase.service';
 import { BooksService } from './services/books.service';
@@ -15,8 +16,8 @@ import { CartComponent } from "./components/cart.component";
     RouterModule,
     SharedModule
   ],
-  declarations: [MenuComponent,LogoComponent,CartComponent],
-  exports: [MenuComponent,LogoComponent,CartComponent]
+  declarations: [MenuComponent,LogoComponent,CartComponent,FooterComponent],
+  exports: [MenuComponent,LogoComponent,CartComponent,FooterComponent]
 })
 export class CoreModule {
   static forRoot() {
