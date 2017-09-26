@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 
 import * as coreActions from './../actions/core.actions';
 
-
 import { of } from 'rxjs/Observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';

@@ -1,7 +1,7 @@
 import { Review } from './../../models/review.model';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 
 import * as fromReview from './../../reducers';
 import * as reviewActions from './../../actions/review.actions';
@@ -9,7 +9,9 @@ import * as reviewActions from './../../actions/review.actions';
 @Component({
   selector: 'app-reviews-container',
   templateUrl: './reviews-container.component.html',
-  styleUrls: ['./reviews-container.component.css']
+  styleUrls: ['./reviews-container.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+  
 })
 export class ReviewsContainerComponent implements OnInit, OnChanges {
 
