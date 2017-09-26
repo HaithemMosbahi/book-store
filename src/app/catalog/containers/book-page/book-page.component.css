@@ -1,0 +1,12 @@
+
+.detail {
+    margin: 64px 32px;
+    width: 50%;
+    max-width: 400px;
+    transition: opacity 0.4s;
+    opacity: 0;
+}
+
+.block {
+    display: inline-block;
+}

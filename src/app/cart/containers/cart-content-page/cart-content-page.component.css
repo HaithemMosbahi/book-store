@@ -1,0 +1,21 @@
+app-cart-content-page {
+    padding: 0 24px 48px 24px;
+}
+
+.footer {
+    display: block;
+    right: 200px;
+    position: absolute;
+}
+
+.footer > div {
+    display:inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer > button {
+    display:inline-block;
+    margin-right: 10px;
+}

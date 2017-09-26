@@ -1,0 +1,12 @@
+<span class="error" *ngIf="control.invalid  && (control.touched || form?.submitted)">
+  Erreur : 
+<span *ngIf="control.hasError('required')"> Ce champ est obligatoire</span>
+<span *ngIf="control.hasError('zipCode')"> Le code postal doit avoir 4 chiffres</span>
+<span *ngIf="control.hasError('zipcode')"> Le code postal doit avoir 4 chiffres</span>
+
+<span *ngIf="control.hasError('minlength')"> Il faut au moins {{control.errors['minlength'].requiredLength}} caractères</span>
+<span *ngIf="control.hasError('maxlength')"> il faut au maximum {{control.errors['maxlength'].requiredLength}} caractères</span>
+<span *ngIf="control.hasError('email')"> format d'email incorrect</span>
+<span *ngIf="control.hasError('domain')"> Vous devez utiliser une adresse email en  {{control.errors['domain'].requiredDomain}} </span>
+
+</span>

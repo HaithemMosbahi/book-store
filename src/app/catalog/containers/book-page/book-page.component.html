@@ -1,0 +1,116 @@
+<!-- <div *ngIf="selectedBook$ | async as book">
+  <app-book-navigator [current]="(current$ | async) + 1" [count]="count$ | async" (onNext)="nextBook($event)" (onPrevious)="previousBook($event)"></app-book-navigator>
+
+  <table>
+    <ng-container *ngIf="book">
+      <tbody>
+        <tr>
+          <th>Couverture</th>
+          <td><img [src]="book.image"></td>
+        </tr>
+        <tr>
+          <th>Titre</th>
+          <td>{{book.title}}</td>
+        </tr>
+        <tr>
+          <th>Author</th>
+          <td>{{book.author}}</td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td>{{book.price | currency:'TND'}}</td>
+        </tr>
+        <tr>
+          <th>Pages</th>
+          <td>{{book.pages}}</td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td>{{book.rating}}</td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>
+            <div [innerHtml]="book.description"></div>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <app-add-to-cart (addToCart)="addBookToCart(book)"></app-add-to-cart>
+          </td>
+        </tr>
+      </tbody>
+    </ng-container>
+  </table>
+</div>
+
+
+<i *ngIf="loading$ | async" class="fa fa-spin fa-refresh"></i> -->
+
+<!-- <div *ngIf="selectedBook$ | async as book">
+  <app-book-navigator [current]="(current$ | async) + 1" [count]="count$ | async" (onNext)="nextBook($event)" (onPrevious)="previousBook($event)"></app-book-navigator>
+
+
+  <md-grid-list cols="2" rowHeight="2:1">
+    <md-grid-tile>
+
+    </md-grid-tile>
+    <md-grid-tile>
+
+    </md-grid-tile>
+  </md-grid-list>
+
+</div> -->
+
+<div *ngIf="selectedBook$ | async as book">
+  <app-book-navigator [current]="(current$ | async) + 1" [count]="count$ | async" (onNext)="nextBook($event)" (onPrevious)="previousBook($event)"></app-book-navigator>
+
+  <md-grid-list *ngIf="book" cols="2">
+
+    <md-grid-tile>
+      <img src="https://shop.polymer-project.org/data/images/10-13256A.jpg">
+    </md-grid-tile>
+    <md-grid-tile>
+      <md-list>
+        <md-list-item>
+          <h1>{{book.title}}</h1>
+        </md-list-item>
+        <md-list-item>
+          <div class="price">{{book.price | currency:'TND'}}</div>
+        </md-list-item>
+        <md-list-item>
+          <div> {{book.pages}}</div>
+        </md-list-item>
+        <md-list-item>
+          <div [innerHtml]="book.description"></div>
+        </md-list-item>
+
+        <md-list-item>
+            <button md-raised-button color="primary">ADD TO CART</button>
+            
+          </md-list-item>
+
+      </md-list>
+
+      
+
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+
+<br/><br/>
+
+<md-list>
+    <md-list-item *ngFor="let message of messages">
+      <img mdListAvatar src="https://pbs.twimg.com/profile_images/861878255229554689/bCE4HLNS_bigger.jpg" alt="">
+      <h3 mdLine> {{message.from}} </h3>
+      <p mdLine>
+        <span> {{message.subject}} </span>
+        <span class="demo-2"> -- {{message.content}} </span>
+      </p>
+    </md-list-item>
+  </md-list>
+
+  <br/><br/>
+  <app-reviews-container></app-reviews-container>
