@@ -33,9 +33,10 @@ export class ReviewEffects {
     reviewVote: Observable<Action> =
     this.actions$.ofType(reviewActions.REVIEW_VOTE)
         .map((action: reviewActions.ReviewVote) => action.payload)
-        .mergeMap(payload => of(this.db.object(`posts/${payload.review.$key}`)
+        .mergeMap(payload => of(this.db.object(`/reviews/${payload.bookId}/all/${payload.review.$key}`)
             .update({
-                votes: payload.review.votes + payload.val
+                upVote: payload.review.upVote + (payload.up ? 1 : 0),
+                downVote: payload.review.downVote + (payload.down ? 1 : 0)
             }))
         ).map(() => new reviewActions.ReviewVoteSuccess())
         .catch(err => of(new reviewActions.ReviewVoteFail({ error: err.message })));

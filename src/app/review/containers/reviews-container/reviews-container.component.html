@@ -2,8 +2,10 @@
 </md-progress-spinner>
 
 <div class="reviews-container" *ngIf="reviews$ | async as reviews">
-  <app-review-item *ngFor="let review of reviews" [text]="review.text" [votes]="review.votes" (removeReview)="removeReview(review)"
-    [user]="review.$key" (upVote)="voteReview(review,1)" (downVote)="voteReview(review,-1)">
+  <app-review-item *ngFor="let review of reviews"
+   [text]="review.text" [downVote]="review.downVote" [upVote]="review.upVote"
+   [user]="review.user" [date]="review.date"
+    (removeReview)="removeReview(review)" [user]="review.$key" (upVoteClicked)="voteReview(review,1)" (downVoteClicked)="voteReview(review,-1)">
   </app-review-item>
 </div>
 

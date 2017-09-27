@@ -45,7 +45,11 @@ export class ReviewsContainerComponent implements OnInit, OnChanges {
   }
 
   voteReview(review, val) {
-    this.store.dispatch(new reviewActions.ReviewVote({ review, val }));
+    let up = val === 1;
+    let down = val === -1;
+    this.store.dispatch(new reviewActions.ReviewVote({
+       review,up,down, bookId:this.bookId
+       }));
   }
 
   addReview(content) {

@@ -9,8 +9,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     <ngx-avatar [src]="_randomAvatarUrl()" ></ngx-avatar>  
     
     </div>
-    <md-card-title>Shiba Inu</md-card-title>
-    <md-card-subtitle>Dog Breed</md-card-subtitle>
+    <md-card-title>{{user}}</md-card-title>
+    <md-card-subtitle>Posted {{date}}</md-card-subtitle>
 
   </md-card-header>
   <md-card-content>
@@ -19,10 +19,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   </p>
   </md-card-content>
   <md-card-actions>
-  {{votes}} <a (click)="upVote.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_up</i></a>
-  <a (click)="downVote.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_down</i></a>
-  <a (click)="removeReview.emit()"> <i style="cursor: pointer;" class="material-icons">close</i></a>
-  </md-card-actions>
+  <div><span class="vote">{{upVote}}</span> <a (click)="upVoteClicked.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_up</i></a>
+  </div> <div><span class="vote">{{downVote}}</span> <a (click)="downVoteClicked.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_down</i></a>
+  </div><div><a (click)="removeReview.emit()"> <i style="cursor: pointer;" class="material-icons">close</i></a>
+  </div></md-card-actions>
 </md-card>
   
     `,
@@ -33,7 +33,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       }
       div {
           display: inline-block;
-          margin-right:25px;
+          margin-right:15PX;
+      }
+
+      .vote{
+        font-size: 19px;
+        vertical-align: bottom;
       }
     `]
 })
@@ -42,9 +47,11 @@ export class ReviewItemComponent implements OnInit {
 
     @Input() user: string;
     @Input() text: string;
-    @Input() votes: number;
-    @Output() upVote: EventEmitter<any> = new EventEmitter();
-    @Output() downVote: EventEmitter<any> = new EventEmitter();
+    @Input() date: string;
+    @Input() upVote: number;
+    @Input() downVote: number;
+    @Output() upVoteClicked: EventEmitter<any> = new EventEmitter();
+    @Output() downVoteClicked: EventEmitter<any> = new EventEmitter();
     @Output() removeReview: EventEmitter<any> = new EventEmitter();
 
     randomAvatarKey: string;
