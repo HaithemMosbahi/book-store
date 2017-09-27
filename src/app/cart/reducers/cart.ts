@@ -27,6 +27,8 @@ export function reducer(state: State = initialState, action: cartActions.Actions
             return { ...state, loading: true };
         case cartActions.LOAD_CART_SUCCESS:
             return { ...state, rows: action.payload, loading: false }
+        case cartActions.GET_CART_TOTAL_SUCCESS:
+            return { ...state, total: action.payload } 
         default:
             return state;
     }

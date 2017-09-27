@@ -8,11 +8,13 @@
     </h3>
     <div>({{cartRows.length}} item)</div>
 
-
-    <app-cart-row *ngFor="let row of cartRows" [row]="row" (remove)="removeFromCart(row)" (clicked)="goToDetail(row.book._id.$oid)"></app-cart-row>
+    <app-cart-row *ngFor="let row of cartRows" [row]="row" 
+      (remove)="removeFromCart(row)"
+      (clicked)="goToDetail(row.book._id.$oid)"
+      (quantityUpdated)="rowQuantityChanged($event)"></app-cart-row>
 
     <div class="footer">
-      <div style="display:inline-block"> Total : 3000 $</div>
+      <div style="display:inline-block"> Total : {{total$ | async | currency:'EUR':true}}</div>
 
       <button md-raised-button routerLink="/cart/order" color="primary">Checkout</button>
     </div>

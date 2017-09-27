@@ -22,7 +22,7 @@ import * as fromBook from './../reducers';
       <td width="50%">
         <h1>{{book.title}}</h1>
         <p> By {{book.author}} </p>
-        <div class="price">{{book.price | currency:'EUR'}}</div>
+        <div class="price">{{book.price | currency:'EUR':true }}</div>
         <p> {{book.pages}} pages</p>
         <div [innerHtml]="book.description"></div>
         <button class="add-cart" (click)="addBookToCart(book)" md-raised-button color="primary">ADD TO CART <i class="material-icons">add_shopping_cart</i></button>

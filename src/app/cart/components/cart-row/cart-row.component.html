@@ -4,9 +4,9 @@
         <md-grid-tile><img width="70px" [src]="row.book.image"></md-grid-tile>
         <md-grid-tile><a (click)="clicked.emit()" routerLink="/catalog/book/{{row.book.id}}">{{row.book.title}} </a></md-grid-tile>
         <md-grid-tile>{{row.book.author}}</md-grid-tile>
-        <md-grid-tile>{{row.book.price | currency:'TND'}}</md-grid-tile>
-        <md-grid-tile><input mdInput type="number" [(ngModel)]="row.quantity"></md-grid-tile>
-        <md-grid-tile>{{row.quantity * row.book.price | currency:'TND' }}</md-grid-tile>
+        <md-grid-tile>{{row.book.price | | currency:'EUR':true }}</md-grid-tile>
+        <md-grid-tile><input type="number" (change)="quantityUpdated.emit()" [(ngModel)]="row.quantity"></md-grid-tile>
+        <md-grid-tile>{{row.quantity * row.book.price | | currency:'EUR':true }}</md-grid-tile>
         <md-grid-tile><a (click)="remove.emit()"> <i style="cursor: pointer;" class="material-icons">close</i></a></md-grid-tile>
     </md-grid-list>
 

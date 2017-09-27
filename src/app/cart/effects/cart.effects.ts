@@ -6,10 +6,15 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
 import { of } from 'rxjs/Observable/of';
-
 import * as cartActions from './../actions/cart.actions';
+
+/**
+ * Side effects service for cart module
+ * 
+ * @export
+ * @class CartEffetcs
+ */
 
 @Injectable()
 export class CartEffetcs {
@@ -33,13 +38,19 @@ export class CartEffetcs {
         .catch(err => of(new cartActions.RemoveFromCartFail({ error: err.message })));
 
 
+    @Effect()
+    cartTotal = this.actions$
+        .ofType(cartActions.GET_CART_TOTAL)
+        .mergeMap((cartRow) => of(this.cartService.total()))
+        .map((total) => new cartActions.GetCartTotalSuccess(total))
+        .catch(err => of(new cartActions.GetCartTotalError({ error: err.message })));
+
+
     @Effect({ dispatch: false })
     checkout = this.actions$.ofType(cartActions.CART_CHECKOUT)
         .delay(2000)
         .map((action: cartActions.CartCheckout) => action.payload)
         .mergeMap(() => of(this.cartService.clear()))
         .do(() => this.router.navigate(['/cart/complete']));
-
-
 
 }

@@ -11,10 +11,12 @@ export class CartRowComponent implements OnInit {
   @Input() row:CartRow;
   @Output() remove:EventEmitter<any>=new EventEmitter();
   @Output() clicked:EventEmitter<any>=new EventEmitter();
+  @Output() quantityUpdated:EventEmitter<any>=new EventEmitter();
   
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

@@ -7,6 +7,7 @@ export const LOAD_CART = '[Cart] load';
 export const LOAD_CART_SUCCESS = '[Cart] load success';
 export const LOAD_CART_FAIL = '[Cart] load fail';
 
+
 export const ADD_TO_CART = '[Cart] add';
 export const ADD_TO_CART_SUCCESS = '[Cart] add success'
 export const ADD_TO_CART_FAIL = '[Cart] add fail'
@@ -18,6 +19,10 @@ export const REMOVE_FROM_CART_FAIL = '[Cart] add fail';
 export const CART_CHECKOUT = '[Cart] checkout';
 export const CART_CHECKOUT_SUCCESS = '[Cart] checkout success';
 export const CART_CHECKOUT_ERROR = '[Cart] checkout error';
+
+export const GET_CART_TOTAL = '[Cart] get total';
+export const GET_CART_TOTAL_SUCCESS = '[Cart] get total success';
+export const GET_CART_TOTAL_ERROR = '[Cart] get total error';
 
 /**
  * Load Cart Action
@@ -74,6 +79,21 @@ export class CartCheckoutFail implements Action {
     constructor(public payload?: any) { }
 }
 
+export class GetCartTotal implements Action {
+    readonly type = GET_CART_TOTAL;
+}
+
+export class GetCartTotalSuccess implements Action {
+    readonly type = GET_CART_TOTAL_SUCCESS;
+    constructor(public payload: number) { }
+}
+
+export class GetCartTotalError implements Action {
+    readonly type = GET_CART_TOTAL_ERROR;
+    constructor(public payload?: any) { }
+}
+
 export type Actions = LoadCart | LoadCartSuccess | LoadCartFail |
     RemoveFromCart | RemoveFromCartSuccess | RemoveFromCartFail |
-    CartCheckout | CartCheckoutSuccess | CartCheckoutFail;
+    CartCheckout | CartCheckoutSuccess | CartCheckoutFail |
+    GetCartTotal | GetCartTotalSuccess | GetCartTotalError;

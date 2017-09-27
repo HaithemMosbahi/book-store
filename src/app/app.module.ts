@@ -11,7 +11,7 @@ import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,LOCALE_ID } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './core/containers/app.component';
 
@@ -60,7 +60,9 @@ import { reducers, metaReducers } from "./core/reducers";
     AvatarModule
   ],
   providers: [
-    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }
+    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
+    {provide: LOCALE_ID, useValue: 'fr-FR'}
+   
   ],
   bootstrap: [AppComponent]
 })
