@@ -17,7 +17,6 @@ import * as fromBook from './../reducers';
     <table *ngIf="book">
       <td width="50%">
         <img height="70%" [src]="book.image">
-  
       </td>
       <td width="50%">
         <h1>{{book.title}}</h1>
@@ -35,7 +34,6 @@ import * as fromBook from './../reducers';
     `,
     styles: [
         `
-
     :host{
         bottom:50px;
     }

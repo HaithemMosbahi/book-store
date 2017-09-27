@@ -16,6 +16,13 @@ import 'rxjs/add/operator/delay';
 import * as reviewActions from './../actions/review.actions';
 export type Action = reviewActions.All;
 
+/**
+ * Side Effects for the Review Module.
+ * 
+ * @export
+ * @class ReviewEffects
+ */
+
 @Injectable()
 export class ReviewEffects {
 

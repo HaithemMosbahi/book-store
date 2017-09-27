@@ -2,14 +2,16 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { CartRow } from './../../../core/models/cart-row';
 import { Observable } from 'rxjs/Observable';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import * as cartActions from './../../actions/cart.actions';
 import * as fromCart from './../../reducers'
 
 @Component({
   selector: 'app-cart-content-page',
   templateUrl: './cart-content-page.component.html',
-  styleUrls: ['./cart-content-page.component.css']
+  styleUrls: ['./cart-content-page.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+  
 })
 export class CartContentPageComponent implements OnInit {
 

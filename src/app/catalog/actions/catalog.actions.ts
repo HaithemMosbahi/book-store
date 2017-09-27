@@ -42,6 +42,13 @@ export class SelectBook implements Action {
     constructor(public payload: any) { }
 }
 
+/**
+ * view book action
+ * 
+ * @export
+ * @class ViewBook
+ * @implements {Action}
+ */
 export class ViewBook implements Action {
     readonly type = VIEW_BOOK;
     constructor(public payload: any) { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import * as fromCollection from './../reducers';
 import { Store } from '@ngrx/store';
@@ -37,7 +37,9 @@ import * as catalogActions from "./../actions/catalog.actions";
             margin:0 auto;
         }
         `
-    ]
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
+    
 })
 export class CatalogListComponent implements OnInit {
 

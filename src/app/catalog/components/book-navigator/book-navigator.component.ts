@@ -20,29 +20,22 @@ export class BookNavigatorComponent implements OnInit, OnChanges {
 
   ngOnInit() {
 
-    if (this.current === 1) {
-      this.previous = false;
-    } else {
-      this.previous = true;
-    };
-    if (this.current === this.count) {
-      this.next = false;
-    } else if(this.current < this.count) {
-      this.next = true;
-    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes detected ');
     if (changes['current']) {
       if (changes['current'].currentValue === 1)
         this.previous = false;
-      else if (changes['current'].currentValue > 1)
+      else if (changes['current'].currentValue > 1) {
         this.previous = true;
-      else if (changes['current'].currentValue === this.count)
-        this.next == false
-      else if(changes['current'].currentValue < this.count)
-        this.next = true;
+        if (changes['current'].currentValue === this.count) {
+          this.next = false;
+        } else if (changes['current'].currentValue < this.count) {
+          this.next = true;
+        }
+
+      }
+
     }
   }
 

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import * as cartActions from './../../actions/cart.actions';
 import * as fromCart from './../../reducers';
@@ -9,7 +9,9 @@ import * as fromCart from './../../reducers';
 @Component({
   selector: 'app-order-page',
   templateUrl: './order-page.component.html',
-  styleUrls: ['./order-page.component.css']
+  styleUrls: ['./order-page.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+  
 })
 export class OrderPageComponent implements OnInit {
 

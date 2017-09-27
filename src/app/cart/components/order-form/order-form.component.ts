@@ -29,7 +29,7 @@ export class OrderFormComponent implements OnInit {
     this.identity = this.fb.group({
       firstName: '',
       lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
-      email: ['',AppValidators.email('gmail.com')],
+      email: ['',[Validators.required,AppValidators.email('gmail.com')]],
     });
 
     /*  this.shipping = new FormGroup({
@@ -67,8 +67,8 @@ export class OrderFormComponent implements OnInit {
     // we use patch value to pass partial obj 
     this.form.patchValue({
       identity: {
-        firstName: "Haithem",
-        lastName: "Mosbahi"
+        firstName: "",
+        lastName: ""
       }
     });
 
