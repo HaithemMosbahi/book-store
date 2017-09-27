@@ -26,7 +26,7 @@ export class ReviewEffects {
     this.actions$.ofType(reviewActions.LOAD_REVIEWS)
         .map((action: reviewActions.LoadReviews) => action.payload)
         //.delay(2000) // just to show a spinner
-        .mergeMap(payload => this.db.list('/posts'))
+        .mergeMap(payload => this.db.list(`/reviews/${payload}/all`))
         .map(reviews => new reviewActions.LoadReviewsSuccess(reviews));
 
     @Effect()
@@ -45,7 +45,7 @@ export class ReviewEffects {
     addReview = this.actions$
         .ofType(reviewActions.ADD_REVIEW)
         .map((action: reviewActions.AddReview) => action.payload)
-        .mergeMap(review => this.db.list('/posts').push(review))
+        .mergeMap(payload => this.db.list(`/reviews/${payload.bookId}/all`).push(payload.review))
         .map(() => new reviewActions.AddReviewSuccess())
         .catch((err) => of(new reviewActions.AddReviewFail({ error: err.message })));
 
@@ -54,7 +54,7 @@ export class ReviewEffects {
     removeReview = this.actions$
         .ofType(reviewActions.REMOVE_REVIEW)
         .map((action: reviewActions.RemoveReview) => action.payload)
-        .mergeMap(payload => this.db.object(`/posts/${payload}`).remove())
+        .mergeMap(payload => this.db.object(`/reviews/${payload.bookId}/all/${payload.reviewId}`).remove())
         .map(() => new reviewActions.RemoveReviewSuccess())
         .catch((err) => of(new reviewActions.RemoveReviewFail({ error: err.message })));
 

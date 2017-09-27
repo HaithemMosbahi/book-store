@@ -49,9 +49,9 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
             cursor:pointer;
           }
           img {
-            width: 100px;
+            width: 170px;
             min-width: 60px;
-            margin-left: 5px;
+            height: 174px;
           }
           md-card-content {
             margin-top: 15px;

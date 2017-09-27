@@ -9,7 +9,7 @@ import * as actions from './../actions/core.actions';
     selector: 'app-root',
     template: `
        <app-logo></app-logo>
-       <app-cart [count]="cartCount$ | async"></app-cart>
+       <app-cart></app-cart>
         <app-menu>
         </app-menu>
         <router-outlet></router-outlet>

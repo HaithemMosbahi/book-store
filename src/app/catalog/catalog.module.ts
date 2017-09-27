@@ -11,8 +11,7 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatalogRoutingModule } from './catalog-routing.module';
-import { BookPageComponent } from './containers/book-page/book-page.component';
-import { CatalogPageComponent } from './containers/catalog-page/catalog-page.component';
+import { SelectedBookComponent } from './containers/selected-book.component';
 
 import { reducers } from './reducers';
 import { BookNavigatorComponent } from './components/book-navigator/book-navigator.component';
@@ -30,7 +29,7 @@ import { AddToCartComponent } from './components/add-to-cart.component';
 
   ],
   providers: [CatalogService],
-  declarations: [BookPageComponent, CatalogListComponent,
+  declarations: [SelectedBookComponent, CatalogListComponent,
     CatalogRootComponent, BookNavigatorComponent,
     AddToCartComponent, CatalogItemComponent]
 })

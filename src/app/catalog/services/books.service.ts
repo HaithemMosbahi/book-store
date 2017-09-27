@@ -32,11 +32,11 @@ export class CatalogService {
     // return this.http.get(url+bookId+apiKey).map(response => response.json());
     return this.fetchBooks().map(books => {
 
-      const book = books.filter(b => b._id.$oid === bookId)[0];
+      const book = books.filter(b => b.id === bookId)[0];
       const index = books.indexOf(book);
       const count = books.length;
-      const previousId = index > 0 ? books[index - 1]._id.$oid : null;
-      const nextId = index < count - 1 ? books[index + 1]._id.$oid : null;
+      const previousId = index > 0 ? books[index - 1].id : null;
+      const nextId = index < count - 1 ? books[index + 1].id : null;
       return { book, previousId, nextId, index, count };
     });
   }

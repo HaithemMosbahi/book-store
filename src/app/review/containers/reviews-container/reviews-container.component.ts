@@ -41,7 +41,7 @@ export class ReviewsContainerComponent implements OnInit, OnChanges {
   }
 
   removeReview(review) {
-    this.store.dispatch(new reviewActions.RemoveReview(review.$key));
+    this.store.dispatch(new reviewActions.RemoveReview({bookId:this.bookId,reviewId:review.$key}));
   }
 
   voteReview(review, val) {
@@ -52,10 +52,12 @@ export class ReviewsContainerComponent implements OnInit, OnChanges {
     let now = new Date();
     let review = {
       text: content,
-      votes: 0,
+      upVote: 0,
+      downVote: 0,
+      user: 'Anonymous',
       date: now.toString()
     }
-    this.store.dispatch(new reviewActions.AddReview(review));
+    this.store.dispatch(new reviewActions.AddReview({review,bookId:this.bookId}));
   }
 
 

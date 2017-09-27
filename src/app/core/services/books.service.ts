@@ -19,8 +19,9 @@ export class BooksService {
 
   constructor(private http: Http) {
     // keep in cache the last result  
-    this.list$ = this.http.get(url + apiKey).map(response => response.json()).publishLast().refCount();
+    this.list$ = this.loadBooks().publishLast().refCount();
 
+    
   }
 
   fetchBooks(): Observable<Book[]> { // Array<Book>
@@ -32,13 +33,20 @@ export class BooksService {
     // return this.http.get(url+bookId+apiKey).map(response => response.json());
     return this.fetchBooks().map(books => {
 
-      const book = books.filter(b => b._id.$oid === bookId)[0];
+      const book = books.filter(b => b.id === bookId)[0];
       const index = books.indexOf(book);
       const count = books.length;
-      const previousId = index > 0 ? books[index - 1]._id.$oid : null;
-      const nextId = index < count - 1 ? books[index + 1]._id.$oid : null;
+      const previousId = index > 0 ? books[index - 1].id : null;
+      const nextId = index < count - 1 ? books[index + 1].id : null;
       return { book, previousId, nextId, index, count };
     });
+  }
+
+  loadBooks(): Observable<Book[]> {
+    const bookApi = 'https://reactive-book-store.firebaseio.com/books.json';
+    return this.http.get(bookApi).map(data => data.json())
+                    .map(obj => Object.values(obj));
+
   }
 
 

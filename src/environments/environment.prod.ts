@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'AIzaSyDLnMiY2Z-ryrI1y1ksuESwJYwUgr-YwNQ',
-    authDomain: 'ngrx-posts.firebaseapp.com',
-    databaseURL: 'https://ngrx-posts.firebaseio.com',
-    projectId: 'ngrx-posts',
-    storageBucket: '',
-    messagingSenderId: '785548733476'
+    apiKey: "AIzaSyCJeroYmtkQNDSbUd2swScFQzwZlV-cXiQ",
+    authDomain: "reactive-book-store.firebaseapp.com",
+    databaseURL: "https://reactive-book-store.firebaseio.com",
+    projectId: "reactive-book-store",
+    storageBucket: "reactive-book-store.appspot.com",
+    messagingSenderId: "113405193809"
   }
 };

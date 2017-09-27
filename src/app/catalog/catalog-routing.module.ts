@@ -1,7 +1,6 @@
 import { CatalogListComponent } from './containers/catalog-list.component';
 import { CatalogRootComponent } from './containers/catalog-root.component';
-import { BookPageComponent } from './containers/book-page/book-page.component';
-import { CatalogPageComponent } from './containers/catalog-page/catalog-page.component';
+import { SelectedBookComponent } from './containers/selected-book.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,7 +9,7 @@ const routes: Routes = [
     path: 'catalog', component: CatalogRootComponent,
     children: [
       { path: 'list', component: CatalogListComponent },
-      { path: 'book/:id', component: BookPageComponent },
+      { path: 'book/:id', component: SelectedBookComponent },
       { path: '', redirectTo: 'list', pathMatch: 'full' }
     ]
   }

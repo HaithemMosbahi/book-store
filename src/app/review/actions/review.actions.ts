@@ -71,7 +71,7 @@ export class ReviewVoteFail implements Action {
 export class AddReview implements Action {
     readonly type = ADD_REVIEW;
 
-    constructor(public payload: Review) {
+    constructor(public payload: any) {
 
     }
 
@@ -97,7 +97,7 @@ export class AddReviewFail implements Action {
 export class RemoveReview implements Action {
     readonly type = REMOVE_REVIEW;
 
-    constructor(public payload: string) {
+    constructor(public payload: any) {
 
     }
 

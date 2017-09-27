@@ -10,7 +10,10 @@ export interface Review {
     pushKey?: string;
     loading?: boolean;
     text:string;
-    votes:number;
+    votes?:number;
     date:string;
+    upVote:number;
+    downVote:number;
+    user?:string;
     error?:string;
 }

@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'app-cart',
     template: `
-    <a routerLink="/cart/content"> {{count}}
+    <a routerLink="/cart/content"> 
     <i class="material-icons md-48 cart">shopping_cart</i>   
     </a> 
   `,

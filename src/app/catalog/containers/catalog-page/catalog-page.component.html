@@ -1,8 +1,0 @@
-<div class="catalog-container">
-  <div *ngIf="books$ | async as books" class="catalog-list">
-    <app-catalog-item *ngFor="let book of books" [book]="book" (addToCart)="addBookToCart($event)" (bookDetails)="goToDetails($event)"></app-catalog-item>
-  </div>
-  <md-progress-spinner  color="primary" mode="indeterminate" value="50">
-  </md-progress-spinner>
-
-</div>

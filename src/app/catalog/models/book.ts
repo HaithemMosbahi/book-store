@@ -6,9 +6,7 @@
  * @interface Book
  */
 export interface Book {
-    _id?: {
-        $oid: string;
-    };
+    id: string;
     isbn10?: string;
     title: string;
     author: string;

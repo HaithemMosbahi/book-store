@@ -66,7 +66,7 @@ export class CatalogListComponent implements OnInit {
     }
 
     goToDetails(book: Book) {
-        this.router.navigate(['/catalog/book/', book._id.$oid]);
+        this.router.navigate(['/catalog/book/', book.id]);
 
     }
 
