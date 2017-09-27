@@ -1,3 +1,4 @@
+import { MomentModule } from 'angular2-moment';
 import { AvatarModule } from 'ngx-avatar';
 import { FormsModule } from '@angular/forms';
 import { ReviewEffects } from './effects/review.effects';
@@ -18,7 +19,8 @@ import { reducers } from './reducers';
     FormsModule,
     AvatarModule,
     StoreModule.forFeature('bookReview', reducers),
-    EffectsModule.forFeature([ReviewEffects])
+    EffectsModule.forFeature([ReviewEffects]),
+    MomentModule
   ],
   exports: [ReviewsContainerComponent],
   declarations: [ReviewsContainerComponent, ReviewItemComponent, AddReviewComponent]

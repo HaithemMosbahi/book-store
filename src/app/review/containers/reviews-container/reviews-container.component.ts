@@ -5,6 +5,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, ChangeDetectionStra
 
 import * as fromReview from './../../reducers';
 import * as reviewActions from './../../actions/review.actions';
+import {randomGenerator} from './../../../shared/utils/random-generator';
 
 @Component({
   selector: 'app-reviews-container',
@@ -58,7 +59,7 @@ export class ReviewsContainerComponent implements OnInit, OnChanges {
       text: content,
       upVote: 0,
       downVote: 0,
-      user: 'Anonymous',
+      user: randomGenerator.randomName(),
       date: now.toString()
     }
     this.store.dispatch(new reviewActions.AddReview({review,bookId:this.bookId}));

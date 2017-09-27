@@ -18,6 +18,9 @@ import { AppComponent } from './core/containers/app.component';
 import {AvatarModule} from 'ngx-avatar'
 import { environment } from '../environments/environment';
 
+import { MomentModule } from 'angular2-moment';
+
+
 import {
   StoreRouterConnectingModule,
   RouterStateSerializer,
@@ -57,7 +60,8 @@ import { reducers, metaReducers } from "./core/reducers";
     // Firebase modules
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AvatarModule
+    AvatarModule,
+    MomentModule
   ],
   providers: [
     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },

@@ -10,7 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     
     </div>
     <md-card-title>{{user}}</md-card-title>
-    <md-card-subtitle>Posted {{date}}</md-card-subtitle>
+    <md-card-subtitle>Posted {{date | amTimeAgo}}</md-card-subtitle>
 
   </md-card-header>
   <md-card-content>
