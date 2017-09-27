@@ -12,7 +12,7 @@ export interface State {
     previousId: string | null;
 }
 
-const initialState: State = {
+export const initialState: State = {
     selectedId: null,
     selectedBook: null,
     loading: false,

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartOrderCompleteComponent } from './cart-order-complete.component';
+import { CheckoutCompletePageComponent } from './checkout-complete-page.component';
 
 describe('CartOrderCompleteComponent', () => {
-  let component: CartOrderCompleteComponent;
-  let fixture: ComponentFixture<CartOrderCompleteComponent>;
+  let component: CheckoutCompletePageComponent;
+  let fixture: ComponentFixture<CheckoutCompletePageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CartOrderCompleteComponent ]
+      declarations: [ CheckoutCompletePageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CartOrderCompleteComponent);
+    fixture = TestBed.createComponent(CheckoutCompletePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

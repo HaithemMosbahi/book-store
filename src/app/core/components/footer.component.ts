@@ -12,9 +12,9 @@ import { Component, OnInit } from '@angular/core';
             position: fixed;
             bottom: 0;
             width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        line-height: 24px;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 24px;
         }
 
         a {
@@ -33,6 +33,7 @@ import { Component, OnInit } from '@angular/core';
             background-color: #202020;
             color: white;
             text-transform: uppercase;
+            font-size: 14px;
         }
     `
     ]
