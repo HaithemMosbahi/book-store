@@ -14,7 +14,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
   </md-card-header>
   <md-card-content>
-  <p>
+  <p style="font-size: 15px;">
   {{text}} 
   </p>
   </md-card-content>
@@ -40,6 +40,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         font-size: 19px;
         vertical-align: bottom;
       }
+
     `]
 })
 
@@ -55,7 +56,6 @@ export class ReviewItemComponent implements OnInit {
     @Output() removeReview: EventEmitter<any> = new EventEmitter();
 
     randomAvatarKey: string;
-
 
     constructor() { }
 

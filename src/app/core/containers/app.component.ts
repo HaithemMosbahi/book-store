@@ -14,6 +14,10 @@ import * as actions from './../actions/core.actions';
         </app-menu>
         <router-outlet></router-outlet>
         <!--<app-footer></app-footer> -->
+        <footer style="margin-top:50px;">
+        <app-footer> </app-footer>
+        </footer>
+        
     `
 })
 export class AppComponent implements OnInit {

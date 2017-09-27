@@ -3,10 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-footer',
     template: `
-      <footer>
-      <a href="https://www.polymer-project.org/1.0/toolbox/">Made by Angular & ngRx</a>
+      <a href="https://angular.io/">Made by Angular & ngRx</a>
       <div class="demo-label">Demo Only</div>
-      </footer>
     `,
     styles: [
         `
@@ -17,6 +15,14 @@ import { Component, OnInit } from '@angular/core';
         text-align: center;
         margin-top: 20px;
         line-height: 24px;
+        }
+
+        a {
+            text-decoration: none !important;
+            text-align: center;
+            white-space: nowrap;
+            color: #757575 !important;
+            padding-bottom: 20px;
         }
 
         .demo-label {

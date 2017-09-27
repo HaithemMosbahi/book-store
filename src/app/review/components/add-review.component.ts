@@ -9,6 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     styles: [`
       :host{
           display:block;
+          bottom:50px;
       }
       textarea,button{
           display: block;
@@ -16,6 +17,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       textarea {
         width: 100%;
         height: 70px;
+        font-size: 15px;
       }
       button{
           float:right;

@@ -37,7 +37,7 @@ import * as fromBook from './../reducers';
         `
 
     :host{
-        margin-bottom: 50px;
+        bottom:50px;
     }
 
     .detail {

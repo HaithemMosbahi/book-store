@@ -7,6 +7,9 @@
    [user]="review.user" [date]="review.date"
     (removeReview)="removeReview(review)" [user]="review.$key" (upVoteClicked)="voteReview(review,1)" (downVoteClicked)="voteReview(review,-1)">
   </app-review-item>
+  <p class="empty-reviews" *ngIf="reviews.length === 0">
+      Be the first one to review this book
+  </p>
 </div>
 
 <app-add-review (reviewAdded)="addReview($event)"></app-add-review>
