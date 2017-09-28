@@ -4,10 +4,14 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 import { of } from 'rxjs/Observable/of';
 import * as cartActions from './../actions/cart.actions';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/do';
+
 
 /**
  * Side effects service for cart module
@@ -25,7 +29,7 @@ export class CartEffetcs {
     @Effect()
     loadCart = this.actions$
         .ofType(cartActions.LOAD_CART)
-        .mergeMap(() => of(this.cartService.rows))
+        .mergeMap(() => of(this.cartService.getCartRows()))
         .map(rows => new cartActions.LoadCartSuccess(rows))
         .catch(err => of(new cartActions.LoadCartFail({ error: err.message })));
 
