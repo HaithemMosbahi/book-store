@@ -4,7 +4,7 @@ import * as fromBooks from './book';
 import { SelectBook, ViewBook } from './../actions/catalog.actions';
 import { Book, mockBook } from '../models/book';
 
-fdescribe('BookReducer', () => {
+describe('BookReducer', () => {
   const book1 = mockBook();
   const book2 = { ...book1, id: '2' };
   const book3 = { ...book1, id: '3' };
