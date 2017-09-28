@@ -41,4 +41,8 @@ export class CartService {
     this.rows = [];
   }
 
+  getCartRows(){
+    return this.rows;
+  }
+
 }
