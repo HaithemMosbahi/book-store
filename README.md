@@ -5,7 +5,12 @@ The aim of this project is to build a modular and scalable application using Ang
 A live demo is hosted on Firebase : [https://reactive-book-store.firebaseapp.com/catalog/list)](https://reactive-book-store.firebaseapp.com/catalog/list)
 
 Technology Stack : 
+
+![alt text](documentation/technology-stack.png "Technology Stack")
+
+
 * Angular 4
+* RxJS 5
 * NgRx 4
 * Material Design 
 * Firebase
@@ -36,6 +41,14 @@ This sample application includes the following features :
 
 # Application Modules 
 The application is splitted into several modules. The image below represents the modules implemented in this application.
+
+![alt text](documentation/app-modules.png "Application Modules")
+
+# Module Architecture
+Every module in the application is following the architecture below : 
+
+![alt text](documentation/module-architecture.png "Application Modules")
+
 
 
 
