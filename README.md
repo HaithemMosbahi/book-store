@@ -1,6 +1,43 @@
-# BookStore
+# Reactive BookStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+The aim of this project is to build a modular and scalable application using Angular and Redux. 
+
+A live demo is hosted on Firebase : [https://reactive-book-store.firebaseapp.com/catalog/list)](https://reactive-book-store.firebaseapp.com/catalog/list)
+
+Technology Stack : 
+* Angular 4
+* NgRx 4
+* Material Design 
+* Firebase
+
+
+The goal of the architecture and structure used in this application is to ensure :
+
+* Scalability
+* Modularity
+* Separation of concerns ( less logic in the UI )
+* Framework agnostic ( Yes The same architecture would be easy to implement in React or Vue)
+* Easy for newcomers
+* Maintainability ( Redux => Time Traveller Debugger => ) 
+* Be Reactive  => Everything should be a stream
+
+This sample application includes the following features : 
+
+* Modular application
+* State Management
+* Routing
+* Lazy loading
+* Reactive forms & validations
+* Backend communication
+* Real Time experience using WebSockets
+* Testing
+* Material design
+
+
+# Application Modules 
+The application is splitted into several modules. The image below represents the modules implemented in this application.
+
+
 
 ## Development server
 
