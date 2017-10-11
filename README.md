@@ -63,7 +63,7 @@ UI components such as menu, cart item and book navigator. These are dump compone
 
 Example of Dump components : 
 
-- [Book Navigator](https://github.com/HaithemMosbahi/book-store/blob/master/src/app/catalog/components/book-navigator/book-navigator.component.ts): it receives current index and the count, and emits events when next and previous are clicked.
+[Book Navigator](https://github.com/HaithemMosbahi/book-store/blob/master/src/app/catalog/components/book-navigator/book-navigator.component.ts): it receives current index and the count, and emits events when next and previous are clicked.
 
 * **Containers**
 
@@ -71,7 +71,7 @@ Components that defines the structure of the page are called Containers. They ar
 
 Examples of Smart components : 
 
-- [Selected book container](https://github.com/HaithemMosbahi/book-store/blob/master/src/app/catalog/containers/selected-book.component.ts) : it represents the container of a selected book page, it contains the book navigator component, book details and review container related to that book. This container dispatches actions to load the details of the selected book and subscribe to the store in order to be notified when data has been loaded. Once data is received the container passes the value to its child components.
+[Selected book container](https://github.com/HaithemMosbahi/book-store/blob/master/src/app/catalog/containers/selected-book.component.ts) : it represents the container of a selected book page, it contains the book navigator component, book details and review container related to that book. This container dispatches actions to load the details of the selected book and subscribe to the store in order to be notified when data has been loaded. Once data is received the container passes the value to its child components.
 
 * **Store** 
 
