@@ -87,7 +87,7 @@ Reducers are responsible of calculating the new state of our application when an
 
 * **Effects**
 
-One of the goal of this architecture is to write a predictable code as much as possible and to handle side effects ( which may brings unpredictability - such as http calls )  into separate units which we call Effects.
+One of the goal of this architecture is to write a predictable code as much as possible and to handle side effects ( which may bring unpredictability - such as http calls )  into separate units which we call Effects.
 For example, the catalog module has several side effects such as loading a list of books or the details of a single book from a rest API.
 Those side effects are handled by reactive blocks. a reactive block consists of subscribing to the stream of actions and then applying a filter to track actions that may cause side effects. Thereafter, a appropriate async service will be called to handle the side effect.
 
