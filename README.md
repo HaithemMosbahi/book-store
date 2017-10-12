@@ -12,7 +12,7 @@ Technology Stack :
 * Angular 4
 * RxJS 5
 * NgRx 4
-* Material Design 
+* Angular Material 
 * Firebase
 
 
@@ -43,6 +43,13 @@ This sample application includes the following features :
 The application is splitted into several modules. The image below represents the modules implemented in this application.
 
 ![alt text](documentation/app-modules.png "Application Modules")
+
+* Core Module : Core of the application, it contains the core layout, menu and logo.
+* Shared Module : Contains shared features such as Material mdoules and several utility classes.
+* Catalog Module : Browse a collection of books and view the details of each books
+* Review Module : Add review for a book, upvote or down vote a review in realtime => it's kind of debate about a book.
+* Cart Module : Add books to cart, checkout and place order.
+* Auth Module : Authentication ( Not implemented yet )
 
 # Module Architecture
 Every module in the application is following the architecture below : 
