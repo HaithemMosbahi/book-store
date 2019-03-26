@@ -1,10 +1,12 @@
+
+import {map, publishLast, refCount} from 'rxjs/operators';
 import { BookNav } from './../../catalog/models/book-nav';
 import { Book } from './../../catalog/models/book';
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
-import { Observable } from "rxjs/Observable";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/publishLast';
+import { Observable } from "rxjs";
+
+
 
 
 const url = "https://api.mongolab.com/api/1/databases/sfbooks/collections/sfbooks/";
@@ -19,7 +21,7 @@ export class BooksService {
 
   constructor(private http: Http) {
     // keep in cache the last result  
-    this.list$ = this.loadBooks().publishLast().refCount();
+    this.list$ = this.loadBooks().pipe(publishLast(),refCount(),);
 
     
   }
@@ -31,7 +33,7 @@ export class BooksService {
 
   getBook(bookId: string): Observable<BookNav> {
     // return this.http.get(url+bookId+apiKey).map(response => response.json());
-    return this.fetchBooks().map(books => {
+    return this.fetchBooks().pipe(map(books => {
 
       const book = books.filter(b => b.id === bookId)[0];
       const index = books.indexOf(book);
@@ -39,13 +41,13 @@ export class BooksService {
       const previousId = index > 0 ? books[index - 1].id : null;
       const nextId = index < count - 1 ? books[index + 1].id : null;
       return { book, previousId, nextId, index, count };
-    });
+    }));
   }
 
   loadBooks(): Observable<Book[]> {
     const bookApi = 'https://reactive-book-store.firebaseio.com/books.json';
-    return this.http.get(bookApi).map(data => data.json())
-                    .map(obj => Object.values(obj));
+    return this.http.get(bookApi).pipe(map(data => data.json()),
+                    map(obj => Object.values(obj)),);
 
   }
 

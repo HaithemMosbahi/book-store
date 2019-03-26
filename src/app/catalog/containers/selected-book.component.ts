@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { BookNav } from './../models/book-nav';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Book } from './../models/book';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';

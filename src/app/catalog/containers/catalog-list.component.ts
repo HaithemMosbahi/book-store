@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import * as fromCollection from './../reducers';
 import { Store } from '@ngrx/store';
 import { Book } from './../models/book';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import * as catalogActions from "./../actions/catalog.actions";
 
 @Component({

@@ -1,9 +1,11 @@
+
+import {refCount, publishLast, map} from 'rxjs/operators';
 import { BookNav } from './../models/book-nav';
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
-import { Observable } from "rxjs/Observable";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/publishLast';
+import { Observable } from "rxjs";
+
+
 
 import { Book } from "../models/book";
 
@@ -19,7 +21,7 @@ export class CatalogService {
 
   constructor(private http: Http) {
     // keep in cache the last result  
-    this.list$ = this.http.get(url + apiKey).map(response => response.json()).publishLast().refCount();
+    this.list$ = this.http.get(url + apiKey).pipe(map(response => response.json()),publishLast(),refCount(),);
 
   }
 
@@ -30,7 +32,7 @@ export class CatalogService {
 
   getBook(bookId: string): Observable<BookNav> {
     // return this.http.get(url+bookId+apiKey).map(response => response.json());
-    return this.fetchBooks().map(books => {
+    return this.fetchBooks().pipe(map(books => {
 
       const book = books.filter(b => b.id === bookId)[0];
       const index = books.indexOf(book);
@@ -38,7 +40,7 @@ export class CatalogService {
       const previousId = index > 0 ? books[index - 1].id : null;
       const nextId = index < count - 1 ? books[index + 1].id : null;
       return { book, previousId, nextId, index, count };
-    });
+    }));
   }
 
 

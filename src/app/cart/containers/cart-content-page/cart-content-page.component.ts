@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { CartRow } from './../../../core/models/cart-row';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import * as cartActions from './../../actions/cart.actions';
 import * as fromCart from './../../reducers'
