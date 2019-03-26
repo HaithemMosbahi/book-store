@@ -13,10 +13,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button md-button (click)="addToCart.emit(book)">
+        <button mat-button (click)="addToCart.emit(book)">
           <i class="material-icons">add_shopping_cart</i>
         </button>
-        <button md-button (click)="bookDetails.emit(book)">
+        <button mat-button (click)="bookDetails.emit(book)">
           <i class="material-icons">search</i>
         </button>
       </mat-card-actions>
@@ -24,23 +24,23 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   `,
   styles: [
     `
-      md-card {
+      mat-card {
         width: 240px;
         height: 260px;
         margin: 15px;
       }
       @media only screen and (max-width: 768px) {
-        md-card {
+        mat-card {
           margin: 15px 0 !important;
         }
       }
-      md-card:hover {
+      mat-card:hover {
         box-shadow: 3px 3px 16px -2px rgba(0, 0, 0, 0.5);
       }
-      md-card-title {
+      mat-card-title {
         margin-right: 10px;
       }
-      md-card-title-group {
+      mat-card-title-group {
         margin: 0;
       }
       a {
@@ -53,7 +53,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
         min-width: 60px;
         height: 174px;
       }
-      md-card-content {
+      mat-card-content {
         margin-top: 15px;
         margin: 0px 0 0;
       }
@@ -61,11 +61,11 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
         display: inline-block;
         font-size: 13px;
       }
-      md-card-footer {
+      mat-card-footer {
         padding: 0 5px 5px;
       }
 
-      md-card-actions {
+      mat-card-actions {
         margin-top: 10px;
       }
     `

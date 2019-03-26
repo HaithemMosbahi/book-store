@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-menu',
   template: `
-    <nav md-tab-nav-bar aria-label="weather navigation links">
+    <nav mat-tab-nav-bar aria-label="weather navigation links">
       <a
         mat-tab-link
         *ngFor="let routeLink of routeLinks; let i = index"

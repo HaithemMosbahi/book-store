@@ -40,7 +40,7 @@ import * as catalogActions from './../actions/catalog.actions';
         flex-wrap: wrap;
         justify-content: center;
       }
-      md-progress-spinner {
+      mat-progress-spinner {
         margin: 0 auto;
       }
     `
