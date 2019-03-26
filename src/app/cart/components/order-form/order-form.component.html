@@ -4,69 +4,69 @@
      <app-field label="Prénom">
        <input formControlName="firstName" type="text">
      </app-field>
- 
+
      <app-field label="Numero de rue">
        <input formControlName="lastName" type="text">
      </app-field>
- 
- 
+
+
      <app-field label="Email">
        <input formControlName="email" type="email">
      </app-field>
- 
+
    </fieldset>
- 
+
    <fieldset formGroupName="shipping">
      <legend>Adresse de livraison</legend>
      <app-field label="Numero de rue">
        <input formControlName="street" type="text">
      </app-field>
- 
+
      <app-field label="code Postal">
        <input formControlName="zipCode" type="text">
- 
+
      </app-field>
- 
+
      <app-field label="Ville">
- 
+
        <input formControlName="city" type="text">
      </app-field>
- 
+
      <app-field label="Pays">
        <input formControlName="country" type="text">
      </app-field>
- 
+
    </fieldset>
- 
+
    <p>
    <label><input (change)="updateBilling()" formControlName="sameAddress" type="checkbox">meme adresse de facturation</label>
  </p>
- 
+
     <fieldset *ngIf="!form.value.sameAddress" formGroupName="billing">
      <legend>Adresse de facturation</legend>
      <app-field label="Numero de rue">
        <input formControlName="street" type="text">
      </app-field>
- 
+
      <app-field label="code Postal">
        <input formControlName="zipCode" type="text">
- 
+
      </app-field>
- 
+
      <app-field label="Ville">
- 
+
        <input formControlName="city" type="text">
      </app-field>
- 
+
      <app-field label="Pays">
        <input formControlName="country" type="text">
      </app-field>
- 
+
    </fieldset>
 
-   
- 
- 
+
+
+
    <p>
      <button [disabled]="isDisabled()" type="submit">Confirmer</button>
    </p>
@@ -76,20 +76,20 @@
 
 
 <!--  <form [class.submitted]="isSubmitted()" (ngSubmit)="onSubmit()" [formGroup]="form" class="example-form">
-    
+
     <div formGroupName="identity">
-            <md-form-field class="example-full-width">
+            <mat-form-field class="example-full-width">
               <input mdInput placeholder="Email" formControlName="email">
-              <md-error *ngIf="emailFormControl.hasError('pattern')">
+              <mat-error *ngIf="emailFormControl.hasError('pattern')">
                 Please enter a valid email address
-              </md-error>
-              <md-error *ngIf="emailFormControl.hasError('required')">
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
                 Email is <strong>required</strong>
-              </md-error>
-            </md-form-field>
+              </mat-error>
+            </mat-form-field>
     </div>
-     
-   
+
+
       <p>
           <button [disabled]="isDisabled()" type="submit">Confirmer</button>
         </p>
@@ -97,176 +97,176 @@
 
 <form [class.submitted]="isSubmitted()" (ngSubmit)="onSubmit()" [formGroup]="form" class="order-form">
 
-  <md-list formGroupName="identity">
+  <mat-list formGroupName="identity">
     <h3 mdSubheader>Account Information</h3>
-    <md-list-item>
+    <mat-list-item>
 
-      <md-form-field class="example-full-width">
+      <mat-form-field class="example-full-width">
         <input mdInput formControlName="firstName" placeholder="First name">
-      </md-form-field>
-    </md-list-item>
-    <md-list-item>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
 
-      <md-form-field class="example-full-width">
+      <mat-form-field class="example-full-width">
         <input mdInput formControlName="lastName" placeholder="Last Name">
-      </md-form-field>
-    </md-list-item>
+      </mat-form-field>
+    </mat-list-item>
 
-    <md-list-item>
+    <mat-list-item>
 
-      <md-form-field class="example-full-width">
+      <mat-form-field class="example-full-width">
         <input mdInput #email formControlName="email" placeholder="Email">
-       
-      </md-form-field>
 
-    </md-list-item>
-    </md-list>
-    <md-list formGroupName="shipping">
+      </mat-form-field>
+
+    </mat-list-item>
+    </mat-list>
+    <mat-list formGroupName="shipping">
     <h3 mdSubheader>Shipping Address</h3>
-    <md-list-item >
+    <mat-list-item >
       <p>
 
-        <md-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <textarea mdInput formControlName="street" placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-        </md-form-field>
-        <md-form-field class="example-full-width">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
           <textarea mdInput placeholder="Address 2"></textarea>
-        </md-form-field>
+        </mat-form-field>
       </p>
 
-    </md-list-item>
-    <md-list-item >
-   
-            <md-form-field>
+    </mat-list-item>
+    <mat-list-item >
+
+            <mat-form-field>
               <input mdInput formControlName="city" placeholder="City">
-            </md-form-field>
-            <md-form-field >
+            </mat-form-field>
+            <mat-form-field >
               <input mdInput formControlName="country" placeholder="Country">
-            </md-form-field>
-            <md-form-field >
+            </mat-form-field>
+            <mat-form-field >
               <input mdInput formControlName="zipCode" #postalCode maxlength="4" placeholder="Postal Code">
-              <md-hint align="end">{{postalCode.value.length}} / 4</md-hint>
-            </md-form-field>
+              <mat-hint align="end">{{postalCode.value.length}} / 4</mat-hint>
+            </mat-form-field>
 
-           
-         
-    </md-list-item>
-    </md-list>
-   <md-list>
+
+
+    </mat-list-item>
+    </mat-list>
+   <mat-list>
       <h3 mdSubheader>Billing Address</h3>
-      
-     <md-list-item> 
-    <md-checkbox (change)="updateBilling()" formControlName="sameAddress">Use the same Address</md-checkbox>
-  </md-list-item>
-</md-list>
+
+     <mat-list-item>
+    <mat-checkbox (change)="updateBilling()" formControlName="sameAddress">Use the same Address</mat-checkbox>
+  </mat-list-item>
+</mat-list>
 
 
-<md-list  *ngIf="!form.value.sameAddress" formGroupName="billing">
+<mat-list  *ngIf="!form.value.sameAddress" formGroupName="billing">
     <h3 mdSubheader>Shipping Address</h3>
-    <md-list-item >
+    <mat-list-item >
       <p>
 
-        <md-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <textarea mdInput formControlName="street" placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-        </md-form-field>
-        <md-form-field class="example-full-width">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
           <textarea mdInput placeholder="Address 2"></textarea>
-        </md-form-field>
+        </mat-form-field>
       </p>
 
-    </md-list-item>
-    <md-list-item >
-   
-            <md-form-field>
-              <input mdInput formControlName="city" placeholder="City">
-            </md-form-field>
-            <md-form-field >
-              <input mdInput formControlName="country" placeholder="Country">
-            </md-form-field>
-            <md-form-field >
-              <input mdInput formControlName="city" #postalCode maxlength="5" placeholder="Postal Code">
-              <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-            </md-form-field>
+    </mat-list-item>
+    <mat-list-item >
 
-           
-         
-    </md-list-item>
-    </md-list>
+            <mat-form-field>
+              <input mdInput formControlName="city" placeholder="City">
+            </mat-form-field>
+            <mat-form-field >
+              <input mdInput formControlName="country" placeholder="Country">
+            </mat-form-field>
+            <mat-form-field >
+              <input mdInput formControlName="city" #postalCode maxlength="5" placeholder="Postal Code">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+
+
+
+    </mat-list-item>
+    </mat-list>
 
     <!-- <ng-template *ngIf="!form.value.sameAddress" formGroupName="billing">
-    <md-list-item >
+    <mat-list-item >
         <p>
-  
-          <md-form-field class="example-full-width">
+
+          <mat-form-field class="example-full-width">
             <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-          </md-form-field>
-          <md-form-field class="example-full-width">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
             <textarea mdInput placeholder="Address 2"></textarea>
-          </md-form-field>
+          </mat-form-field>
         </p>
-  
-      </md-list-item>
-      <md-list-item >
-     
-              <md-form-field>
+
+      </mat-list-item>
+      <mat-list-item >
+
+              <mat-form-field>
                 <input mdInput placeholder="City">
-              </md-form-field>
-              <md-form-field >
+              </mat-form-field>
+              <mat-form-field >
                 <input mdInput placeholder="State">
-              </md-form-field>
-              <md-form-field >
+              </mat-form-field>
+              <mat-form-field >
                 <input mdInput #postalCode maxlength="5" placeholder="Postal Code">
-                <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-              </md-form-field>
-           
-      </md-list-item>
+                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+              </mat-form-field>
+
+      </mat-list-item>
       </ng-template> -->
 
   <button [disabled]="isDisabled()" type="submit" md-raised-button routerLink="/cart/order" color="primary">Place Order</button>
-  
-  <!-- 
+
+  <!--
   <h3><b>Account Information</b></h3>
   <table cellspacing="0">
     <tr>
       <td>
-        <md-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <input mdInput placeholder="First name">
-        </md-form-field>
+        </mat-form-field>
       </td>
       <td>
-        <md-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <input mdInput placeholder="Last Name">
-        </md-form-field>
+        </mat-form-field>
       </td>
     </tr>
   </table>
 
 
-  <md-form-field class="example-full-width">
+  <mat-form-field class="example-full-width">
     <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-  </md-form-field>
-  <md-form-field class="example-full-width">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
     <textarea mdInput placeholder="Address 2"></textarea>
-  </md-form-field>
+  </mat-form-field>
 
 
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
-        <md-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <input mdInput placeholder="City">
-        </md-form-field>
+        </mat-form-field>
       </td>
       <td>
-        <md-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <input mdInput placeholder="State">
-        </md-form-field>
+        </mat-form-field>
       </td>
       <td>
-        <md-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-          <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-        </md-form-field>
+          <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+        </mat-form-field>
       </td>
     </tr>
   </table>

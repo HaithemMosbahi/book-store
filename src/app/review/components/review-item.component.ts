@@ -3,28 +3,28 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'app-review-item',
     template: `
-    <md-card>
-    <md-card-header>
+    <mat-card>
+    <mat-card-header>
     <div md-card-avatar>
-    <ngx-avatar [src]="_randomAvatarUrl()" ></ngx-avatar>  
-    
-    </div>
-    <md-card-title>{{user}}</md-card-title>
-    <md-card-subtitle>Posted {{date | amTimeAgo}}</md-card-subtitle>
+    <ngx-avatar [src]="_randomAvatarUrl()" ></ngx-avatar>
 
-  </md-card-header>
-  <md-card-content>
+    </div>
+    <mat-card-title>{{user}}</mat-card-title>
+    <mat-card-subtitle>Posted {{date | amTimeAgo}}</mat-card-subtitle>
+
+  </mat-card-header>
+  <mat-card-content>
   <p style="font-size: 15px;">
-  {{text}} 
+  {{text}}
   </p>
-  </md-card-content>
-  <md-card-actions>
+  </mat-card-content>
+  <mat-card-actions>
   <div><span class="vote">{{upVote}}</span> <a (click)="upVoteClicked.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_up</i></a>
   </div> <div><span class="vote">{{downVote}}</span> <a (click)="downVoteClicked.emit()"> <i style="cursor: pointer;" class="material-icons">thumb_down</i></a>
   </div><div><a (click)="removeReview.emit()"> <i style="cursor: pointer;" class="material-icons">close</i></a>
-  </div></md-card-actions>
-</md-card>
-  
+  </div></mat-card-actions>
+</mat-card>
+
     `,
     styles: [`
       :host{

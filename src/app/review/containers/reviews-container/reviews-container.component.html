@@ -1,5 +1,5 @@
-<md-progress-spinner *ngIf="loading$ | async" color="primary" mode="indeterminate" value="50">
-</md-progress-spinner>
+<mat-progress-spinner *ngIf="loading$ | async" color="primary" mode="indeterminate" value="50">
+</mat-progress-spinner>
 
 <div class="reviews-container" *ngIf="reviews$ | async as reviews">
   <app-review-item *ngFor="let review of reviews"
